@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Access List</title>
+	</head>
+	<body>
+		<main>
+			<section class="section">
+				<div class="container is-max-widescreen">
+					<h1 class="title">Access List</h1>
+
+					<p class="mb-3">
+						By default the code tries to fetch the data for the current week. <br />
+						If there is no data the last week with data is queried. <br />
+						The week can be selected with the datepicker.
+					</p>
+					<div id="week" class="mb-5"></div>
+
+					<div class="is-flex">
+						<div class="select mb-3">
+							<select id="selectClass">
+								<option value="">All classes</option>
+							</select>
+						</div>
+
+						<div class="ml-3">
+							<input type="date" id="date" class="p-2" />
+							<button id="clear" class="p-2 is-hidden">x</button>
+						</div>
+					</div>
+
+					<table id="classData" class="table is-bordered is-striped is-fullwidth">
+						<tbody></tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+
+		<script src="js/script.js" type="module"></script>
+	</body>
+</html>
