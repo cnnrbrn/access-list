@@ -1,4 +1,19 @@
 html,
 body {
 	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #ff4a4a;
+	background-image: url("http://bonitadiener.com/wp-content/uploads/2022/08/Pencil_List.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+@media (max-width: 900px) {
+	body {
+		background-image: none;
+	}
 }
