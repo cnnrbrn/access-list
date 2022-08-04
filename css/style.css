@@ -10,6 +10,11 @@ body {
 	background-image: url("http://bonitadiener.com/wp-content/uploads/2022/08/Pencil_List.png");
 	background-repeat: no-repeat;
 	background-position: right top;
+	color: white;
+}
+
+h1 {
+	color: white !important;
 }
 
 @media (max-width: 900px) {
