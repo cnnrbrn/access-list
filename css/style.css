@@ -1,3 +1,7 @@
+:root {
+	--primary-colour: #ff4a4a;
+}
+
 html,
 body {
 	height: 100%;
@@ -6,15 +10,51 @@ body {
 }
 
 body {
-	background-color: #ff4a4a;
 	background-image: url("http://bonitadiener.com/wp-content/uploads/2022/08/Pencil_List.png");
 	background-repeat: no-repeat;
 	background-position: right top;
 	color: white;
 }
 
+.has-background-light {
+	background-color: var(--primary-colour) !important;
+}
+
 h1 {
 	color: white !important;
+}
+
+table {
+	margin-top: 1.5em;
+}
+
+table th {
+	background: #444;
+	color: white !important;
+}
+
+select,
+.date-picker {
+	background: var(--primary-colour) !important;
+	color: white !important;
+	border: 2px solid white !important;
+}
+
+.select::after {
+	border-color: #ffffff !important;
+}
+
+.date-picker {
+	border-radius: 999px;
+	font-size: 1rem;
+}
+
+.week {
+	font-size: 1.2rem;
+}
+
+::-webkit-calendar-picker-indicator {
+	filter: invert(1);
 }
 
 @media (max-width: 900px) {

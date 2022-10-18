@@ -10,6 +10,5 @@ export function getSelectedDate() {
 
 export function getSelectedClass() {
 	const select = document.querySelector("#selectClass");
-
 	return select.value;
 }

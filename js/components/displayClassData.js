@@ -33,7 +33,6 @@ export default function displayClassData() {
 
 		const currentModule = findCurrentModule(className, weekWithData);
 
-		newText = document.createTextNode(currentModule);
-		newCell.appendChild(newText);
+		newCell.innerHTML = currentModule;
 	}
 }
