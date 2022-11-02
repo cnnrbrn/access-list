@@ -3,55 +3,55 @@
 
 html,
 body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	color: var(--dark);
+  color: var(--dark);
 }
 
 .has-background-light {
-	background-color: var(--primary-colour) !important;
+  background-color: var(--primary-colour) !important;
 }
 
 table {
-	margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 table th {
-	background: #444;
-	color: white !important;
+  background: #aaa;
+  color: white !important;
 }
 
 select,
 .date-picker {
-	background: var(--primary-colour) !important;
-	color: white !important;
-	border: 2px solid white !important;
-	/* border: 2px solid #333 !important; */
+  background: var(--primary-colour) !important;
+  color: white !important;
+  border: 2px solid white !important;
+  /* border: 2px solid #333 !important; */
 }
 
 .select::after {
-	border-color: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
 .date-picker {
-	border-radius: 999px;
-	font-size: 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
 }
 
 .week {
-	font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 ::-webkit-calendar-picker-indicator {
-	filter: invert(1);
+  filter: invert(1);
 }
 
 @media (max-width: 900px) {
-	body {
-		background-image: none;
-	}
+  body {
+    background-image: none;
+  }
 }
