@@ -4,7 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"lint": "eslint js/**/*.js",
+		"lint-fix": "eslint js/**/*.js --cache --fix",
+		"format": "prettier -w js/**/*.js",
+		"prepare": "husky install"
 	},
 	"repository": {
 		"type": "git",
@@ -18,5 +21,23 @@
 	"homepage": "https://github.com/cnnrbrn/access-list#readme",
 	"dependencies": {
 		"jsdoc": "^3.6.11"
+	},
+	"devDependencies": {
+		"eslint": "^8.26.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1"
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.html": [
+			"prettier --write"
+		],
+		"*.css": [
+			"prettier --write"
+		]
 	}
 }

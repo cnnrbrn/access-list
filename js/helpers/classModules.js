@@ -6,7 +6,7 @@ import classData from "../data/classData.js";
  * @returns {boolean}
  */
 function weekIsEmpty(moduleName) {
-	return moduleName.trim() === "";
+  return moduleName.trim() === "";
 }
 
 /**
@@ -15,7 +15,7 @@ function weekIsEmpty(moduleName) {
  * @returns {boolean}
  */
 export function isNameOfModule(moduleName) {
-	return isNaN(parseInt(moduleName)) && !weekIsEmpty(moduleName);
+  return isNaN(parseInt(moduleName)) && !weekIsEmpty(moduleName);
 }
 
 /**
@@ -24,11 +24,15 @@ export function isNameOfModule(moduleName) {
  * @returns {string} "week" | "module"
  */
 function weekOrModule(moduleName) {
-	const name = moduleName.toLowerCase();
-	if (name.includes("exam") || name.includes("project") || name.includes("portfolio")) {
-		return "week";
-	}
-	return "module";
+  const name = moduleName.toLowerCase();
+  if (
+    name.includes("exam") ||
+    name.includes("project") ||
+    name.includes("portfolio")
+  ) {
+    return "week";
+  }
+  return "module";
 }
 
 /**
@@ -40,92 +44,107 @@ function weekOrModule(moduleName) {
  */
 
 function findModuleName(classModules, index, className) {
-	let emptyWeeks = 0;
+  let emptyWeeks = 0;
 
-	for (let i = index; i >= 0; i--) {
-		const [moduleWeek] = Object.keys(classModules[i]);
-		const moduleName = classModules[i][moduleWeek];
+  for (let i = index; i >= 0; i--) {
+    const [moduleWeek] = Object.keys(classModules[i]);
+    const moduleName = classModules[i][moduleWeek];
 
-		if (weekIsEmpty(moduleName)) {
-			emptyWeeks++;
-		}
+    if (weekIsEmpty(moduleName)) {
+      emptyWeeks++;
+    }
 
-		if (isNameOfModule(moduleName)) {
-			const moduleType = weekOrModule(moduleName);
+    if (isNameOfModule(moduleName)) {
+      const moduleType = weekOrModule(moduleName);
 
-			let currentWeek = getCurrentWeek(index, i - 1, emptyWeeks, className, moduleType);
+      let currentWeek = getCurrentWeek(
+        index,
+        i - 1,
+        emptyWeeks,
+        className,
+        moduleType
+      );
 
-			let remainingWeeks = findRemainingWeeks(classModules, index, classModules.length, moduleName);
+      let remainingWeeks = findRemainingWeeks(
+        classModules,
+        index,
+        classModules.length,
+        moduleName
+      );
 
-			if (isClassPartTime(className) && moduleType !== "week") {
-				if (currentWeek % 2 === 0) {
-					remainingWeeks = Math.ceil(remainingWeeks / 2);
-				} else {
-					remainingWeeks = Math.floor(remainingWeeks / 2);
-				}
+      if (isClassPartTime(className) && moduleType !== "week") {
+        if (currentWeek % 2 === 0) {
+          remainingWeeks = Math.ceil(remainingWeeks / 2);
+        } else {
+          remainingWeeks = Math.floor(remainingWeeks / 2);
+        }
 
-				currentWeek = Math.ceil(currentWeek / 2);
-			}
+        currentWeek = Math.ceil(currentWeek / 2);
+      }
 
-			let totalWeeks = currentWeek + remainingWeeks;
+      let totalWeeks = currentWeek + remainingWeeks;
 
-			return `<b>${moduleName}</b> ${moduleType} <b>${currentWeek}</b> of <b>${totalWeeks}</b>`;
-		}
-	}
+      return `<b>${moduleName}</b> ${moduleType} <b>${currentWeek}</b> of <b>${totalWeeks}</b>`;
+    }
+  }
 }
 
 function findRemainingWeeks(classModules, index, loopLimit, currentModuleName) {
-	let emptyWeeks = 0;
-	let count = 0;
+  let emptyWeeks = 0;
+  let count = 0;
 
-	for (let i = index + 1; i <= loopLimit; i++) {
-		const [moduleWeek] = Object.keys(classModules[i]);
-		const moduleName = classModules[i][moduleWeek];
+  for (let i = index + 1; i <= loopLimit; i++) {
+    const [moduleWeek] = Object.keys(classModules[i]);
+    const moduleName = classModules[i][moduleWeek];
 
-		if (weekIsEmpty(moduleName)) {
-			if (currentModuleName === "Portfolio2") {
-				break;
-			}
-			emptyWeeks++;
-		}
+    if (weekIsEmpty(moduleName)) {
+      if (currentModuleName === "Portfolio2") {
+        break;
+      }
+      emptyWeeks++;
+    }
 
-		if (isNameOfModule(moduleName)) {
-			break;
-		}
+    if (isNameOfModule(moduleName)) {
+      break;
+    }
 
-		count++;
-	}
+    count++;
+  }
 
-	return count - emptyWeeks;
+  return count - emptyWeeks;
 }
 
 function getCurrentWeek(index, count, emptyWeeks) {
-	let currentWeek = index - count - emptyWeeks;
+  let currentWeek = index - count - emptyWeeks;
 
-	return currentWeek;
+  return currentWeek;
 }
 
 function isClassPartTime(className) {
-	return className.toLowerCase().includes(" p");
+  return className.toLowerCase().includes(" p");
 }
 
 export function findCurrentModule(className, week) {
-	const classModules = classData[className];
-	// let thisWeek = classModules.find((classModule) => classModule.hasOwnProperty(week));
+  const classModules = classData[className];
+  // let thisWeek = classModules.find((classModule) => classModule.hasOwnProperty(week));
 
-	// const thisWeeksModule = thisWeek[week];
+  // const thisWeeksModule = thisWeek[week];
 
-	// if (isNameOfModule(thisWeeksModule)) {
-	// 	const moduleType = weekOrModule(thisWeeksModule);
+  // if (isNameOfModule(thisWeeksModule)) {
+  // 	const moduleType = weekOrModule(thisWeeksModule);
 
-	// 	// let remainingWeeks = findRemainingWeeks(classModules, index, classModules.length, moduleName, moduleType, className);
+  // 	// let remainingWeeks = findRemainingWeeks(classModules, index, classModules.length, moduleName, moduleType, className);
 
-	// 	return `<b>${thisWeeksModule}</b> ${moduleType} 1 of `;
-	// }
+  // 	return `<b>${thisWeeksModule}</b> ${moduleType} 1 of `;
+  // }
 
-	const thisWeekIndex = classModules.findIndex((classModule) => classModule.hasOwnProperty(week));
+  const thisWeekIndex = classModules.findIndex(
+    (classModule) => Object.prototype.hasOwnProperty.call(classModule, week)
 
-	const moduleName = findModuleName(classModules, thisWeekIndex, className);
+    // classModule.hasOwnProperty(week)
+  );
 
-	return moduleName ?? "No data";
+  const moduleName = findModuleName(classModules, thisWeekIndex, className);
+
+  return moduleName ?? "No data";
 }
