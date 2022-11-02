@@ -38,7 +38,7 @@ export function formateDate(date, monthFirst = true) {
 	if (monthFirst) {
 		datestring = d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear();
 	} else {
-		datestring = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+		datestring = d.getDate() + " " + d.toLocaleString("default", { month: "long" }) + " " + d.getFullYear();
 	}
 
 	return datestring;
