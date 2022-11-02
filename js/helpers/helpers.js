@@ -9,8 +9,20 @@ export function getMondayOfWeek(date) {
 		date = new Date();
 	}
 
-	const firstDayOfWeek = date.getDate() - date.getDay() + 1;
-	const dateOfFirstDay = `${date.getMonth() + 1}/${firstDayOfWeek}/${date.getFullYear()}`;
+	console.log("date", date);
+	console.log("date.getDate()", date.getDate());
+	console.log("date.getDay()", date.getDay());
+
+	// const firstDayOfWeek = date.getDate() - date.getDay() + 1;
+	const firstMondayOfWeek = date.setDate(date.getDate() - ((date.getDay() + 6) % 7));
+	const firstMondayOfWeekAsDate = new Date(firstMondayOfWeek);
+	console.log("firstMondayOfWeekAsDate", firstMondayOfWeekAsDate);
+
+	const dateOfFirstDay = `${
+		firstMondayOfWeekAsDate.getMonth() + 1
+	}/${firstMondayOfWeekAsDate.getDate()}/${firstMondayOfWeekAsDate.getFullYear()}`;
+	console.log("dateOfFirstDay", dateOfFirstDay);
+
 	return dateOfFirstDay;
 }
 
@@ -44,6 +56,8 @@ export function findClosestPrevDate(dates, currentWeek) {
 
 export function getWeekWithDataIfCurrentIsEmpty() {
 	const selectedDate = getSelectedDate();
+
+	console.log("selectedDate", selectedDate);
 
 	let weekToGetDataFor = getMondayOfWeek(selectedDate);
 
