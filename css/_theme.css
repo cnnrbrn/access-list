@@ -40,6 +40,13 @@ html.red {
 .theme-picker {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
+	height: 30px;
+}
+
+.theme-picker fieldset {
+	display: flex;
+	align-items: center;
 }
 
 input[type="radio"] {
@@ -50,26 +57,36 @@ input[type="radio"] {
 	border-radius: 50%;
 	width: 20px;
 	height: 20px;
-
 	border: 2px solid #999;
 	transition: 0.2s all linear;
 	margin-right: 5px;
-
 	position: relative;
 	top: 4px;
 }
 
-input[type="radio"].dark:checked {
-	border: 2px solid white;
-	background: var(--dark) !important;
+input[type="radio"] {
+	border-color: transparent;
+	margin-left: 10px;
 }
 
-input[type="radio"].light:checked {
-	border: 2px solid var(--dark);
+input[type="radio"]:checked {
+	border-color: white;
+	width: 24px;
+	height: 24px;
+}
+
+input[type="radio"].dark {
+	background: black !important;
+}
+
+input[type="radio"].light {
 	background: var(--light) !important;
 }
 
-input[type="radio"].red:checked {
-	border: 2px solid white;
+input[type="radio"].light:checked {
+	border-color: var(--dark);
+}
+
+input[type="radio"].red {
 	background: var(--red) !important;
 }
