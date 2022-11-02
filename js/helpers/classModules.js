@@ -5,7 +5,7 @@ import classData from "../data/classData.js";
  * @param {string} moduleName
  * @returns {boolean}
  */
-function weekIsEmpty(moduleName) {
+export function weekIsEmpty(moduleName) {
   return moduleName.trim() === "";
 }
 
