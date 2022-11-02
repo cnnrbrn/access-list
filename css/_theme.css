@@ -1,92 +1,97 @@
 html.dark {
-	background: var(--dark);
-	color: white !important;
+  background: #181822;
+  color: white !important;
 }
 
 html.dark body,
 html.red body,
 html.dark h1,
 html.red h1 {
-	color: white !important;
+  color: white !important;
 }
 
 html.dark .select select,
 html.dark .date-picker {
-	color: white !important;
-	border: 2px solid white !important;
+  color: white !important;
+  border: 2px solid white !important;
 }
 
 html.dark th {
-	background: #111;
+  background: #16171b;
 }
 
 html.dark td {
-	color: white;
-	background: #444;
+  color: white;
+  background: #232935;
+  border-color: #3e3e3e;
+}
+
+html.dark th {
+  border-color: #3e3e3e;
 }
 
 html.dark tr:nth-of-type(2n) td {
-	background: #222;
+  background: #222;
 }
 
 html.red {
-	background-image: url("../images/pencil-list.png");
-	background-repeat: no-repeat;
-	background-position: right top;
-	background-color: var(--red);
-	color: white;
+  background-image: url("../images/pencil-list.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: var(--red);
+  color: white;
 }
 
 .theme-picker {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 30px;
 }
 
 .theme-picker fieldset {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 input[type="radio"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
-	border: 2px solid #999;
-	transition: 0.2s all linear;
-	margin-right: 5px;
-	position: relative;
-	top: 4px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
 }
 
 input[type="radio"] {
-	border-color: transparent;
-	margin-left: 10px;
+  border-color: transparent;
+  margin-left: 10px;
 }
 
 input[type="radio"]:checked {
-	border-color: white;
-	width: 24px;
-	height: 24px;
+  border-color: white;
+  width: 24px;
+  height: 24px;
 }
 
 input[type="radio"].dark {
-	background: black !important;
+  background: black !important;
 }
 
 input[type="radio"].light {
-	background: var(--light) !important;
+  background: var(--light) !important;
 }
 
 input[type="radio"].light:checked {
-	border-color: var(--dark);
+  border-color: var(--dark);
 }
 
 input[type="radio"].red {
-	background: var(--red) !important;
+  background: var(--red) !important;
 }
