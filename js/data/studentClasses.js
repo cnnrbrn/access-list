@@ -6,7 +6,6 @@ export default [
 	"Jan 20 PT",
 	"Mar 20 PT",
 	"Aug 20 PT",
-	"Oct 20 FT",
 	"OCT 20 PT",
 	"Jan 21 F",
 	"Jan 21 P",
