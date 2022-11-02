@@ -9,10 +9,6 @@ export function getMondayOfWeek(date) {
     date = new Date();
   }
 
-  console.log("date", date);
-  console.log("date.getDate()", date.getDate());
-  console.log("date.getDay()", date.getDay());
-
   // const firstDayOfWeek = date.getDate() - date.getDay() + 1;
   const firstMondayOfWeek = date.setDate(
     date.getDate() - ((date.getDay() + 6) % 7)
