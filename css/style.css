@@ -1,6 +1,5 @@
-:root {
-	--primary-colour: #ff4a4a;
-}
+@import "_variables.css";
+@import "_theme.css";
 
 html,
 body {
@@ -10,18 +9,11 @@ body {
 }
 
 body {
-	background-image: url("http://bonitadiener.com/wp-content/uploads/2022/08/Pencil_List.png");
-	background-repeat: no-repeat;
-	background-position: right top;
-	color: white;
+	color: var(--dark);
 }
 
 .has-background-light {
 	background-color: var(--primary-colour) !important;
-}
-
-h1 {
-	color: white !important;
 }
 
 table {
@@ -38,6 +30,7 @@ select,
 	background: var(--primary-colour) !important;
 	color: white !important;
 	border: 2px solid white !important;
+	/* border: 2px solid #333 !important; */
 }
 
 .select::after {

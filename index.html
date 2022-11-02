@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="has-background-light">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,6 +12,13 @@
 		<main>
 			<section class="section">
 				<div class="container is-max-widescreen">
+					<form id="themePicker" class="theme-picker">
+						<fieldset>
+							<input type="radio" name="theme" value="dark" class="dark" />
+							<input type="radio" name="theme" value="light" class="light" />
+							<input type="radio" name="theme" value="red" class="red" />
+						</fieldset>
+					</form>
 					<h1 class="title">Class Schedule</h1>
 
 					<div id="week" class="week mb-5"></div>
