@@ -1,4 +1,4 @@
 /node_modules
 .DS_Store
 .eslintcache
-cypress/videos/*.mp4
+/cypress/videos/*.mp4
