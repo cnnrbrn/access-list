@@ -44,6 +44,9 @@
 			"eslint --fix",
 			"prettier --write"
 		],
+		"*.test.js": [
+			"jest"
+		],
 		"*.html": [
 			"prettier --write"
 		],
