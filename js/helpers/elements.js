@@ -5,6 +5,7 @@ export function getSelectedDate() {
   if (!datepicker.value) {
     return null;
   }
+  //
   return formateDate(datepicker.value);
 }
 
