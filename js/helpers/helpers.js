@@ -8,8 +8,6 @@ export function getMondayOfWeek(date) {
   } else {
     date = new Date();
   }
-
-  // const firstDayOfWeek = date.getDate() - date.getDay() + 1;
   const firstMondayOfWeek = date.setDate(
     date.getDate() - ((date.getDay() + 6) % 7)
   );
