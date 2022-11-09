@@ -8,6 +8,7 @@ import classData from "../data/classData.js";
 export function weekIsEmpty(moduleName) {
   //
   return moduleName.trim() === "";
+  //
 }
 
 /**
