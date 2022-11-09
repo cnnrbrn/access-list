@@ -25,12 +25,12 @@
 	},
 	"homepage": "https://github.com/cnnrbrn/access-list#readme",
 	"dependencies": {
+		"cypress": "^11.0.0",
 		"jsdoc": "^3.6.11"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.19.3",
 		"@babel/preset-env": "^7.19.4",
-		"cypress": "^10.7.0",
 		"eslint": "^8.26.0",
 		"eslint-plugin-cypress": "^2.12.1",
 		"eslint-plugin-jest": "^27.1.3",
