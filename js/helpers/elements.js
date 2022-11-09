@@ -6,6 +6,7 @@ export function getSelectedDate() {
     return null;
   }
   //
+  //
   return formateDate(datepicker.value);
 }
 
