@@ -9,6 +9,7 @@ export function weekIsEmpty(moduleName) {
   //
   return moduleName.trim() === "";
   //
+  //
 }
 
 /**
