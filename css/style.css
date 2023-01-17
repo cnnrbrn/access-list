@@ -50,6 +50,19 @@ select,
   filter: invert(1);
 }
 
+.old-content,
+.old-content-key {
+  background: #f4f4b4 !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.old-content-key {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  max-width: 200px;
+}
+
 @media (max-width: 900px) {
   body {
     background-image: none;

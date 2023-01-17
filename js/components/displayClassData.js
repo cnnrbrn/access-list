@@ -1,38 +1,61 @@
 import classData from "../data/classData.js";
+import oldContentClasses from "../data/oldContentClasses.js";
 import { getWeekWithDataIfCurrentIsEmpty } from "../helpers/helpers.js";
-import { findCurrentModule } from "../helpers/classModules.js";
+import { findCurrentModule, findDeadline, findNextModule } from "../helpers/classModules.js";
 import { getSelectedClass } from "../helpers/elements.js";
 
 export default function displayClassData() {
-  const tableBody = document.querySelector("#classData tbody");
+	const tableBody = document.querySelector("#classData tbody");
 
-  tableBody.innerHTML = "";
+	tableBody.innerHTML = "";
 
-  const selectedClass = getSelectedClass();
+	const selectedClass = getSelectedClass();
 
-  const weekWithData = getWeekWithDataIfCurrentIsEmpty();
+	const weekWithData = getWeekWithDataIfCurrentIsEmpty();
 
-  const classDataEntries = Object.entries(classData);
+	const classDataEntries = Object.entries(classData);
 
-  for (let i = 0; i < classDataEntries.length; i++) {
-    const className = classDataEntries[i][0];
+	for (let i = 0; i < classDataEntries.length; i++) {
+		const className = classDataEntries[i][0];
 
-    if (selectedClass && className !== selectedClass) {
-      continue;
-    }
+		if (selectedClass && className !== selectedClass) {
+			continue;
+		}
 
-    const newRow = tableBody.insertRow();
+		console.log("className", className);
 
-    let newCell = newRow.insertCell();
+		const [classModules, thisWeekIndex] = getClassModulesAndWeekIndex(className, weekWithData);
 
-    let newText = document.createTextNode(className);
-    newCell.classList.add("has-text-weight-bold");
-    newCell.appendChild(newText);
+		const newRow = tableBody.insertRow();
 
-    newCell = newRow.insertCell();
+		let newCell = newRow.insertCell();
 
-    const currentModule = findCurrentModule(className, weekWithData);
+		let newText = document.createTextNode(className);
+		newCell.classList.add("has-text-weight-bold");
+		if (oldContentClasses.includes(className)) {
+			newCell.classList.add("old-content");
+		}
+		newCell.appendChild(newText);
 
-    newCell.innerHTML = currentModule;
-  }
+		const currentModule = findCurrentModule(classModules, thisWeekIndex, className);
+		newCell = newRow.insertCell();
+		newCell.innerHTML = currentModule;
+
+		// const deadline = findDeadline(className, weekWithData);
+		// newCell = newRow.insertCell();
+		// newCell.innerHTML = JSON.stringify(deadline);
+
+		const [nextModuleName, nextModuleDate] = findNextModule(classModules, thisWeekIndex);
+		newCell = newRow.insertCell();
+		newCell.innerHTML = nextModuleName ?? "";
+
+		newCell = newRow.insertCell();
+		newCell.innerHTML = nextModuleDate;
+	}
+}
+
+function getClassModulesAndWeekIndex(className, week) {
+	const classModules = classData[className];
+	const thisWeekIndex = classModules.findIndex((classModule) => Object.prototype.hasOwnProperty.call(classModule, week));
+	return [classModules, thisWeekIndex];
 }

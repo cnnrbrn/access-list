@@ -1,0 +1,16 @@
+export default [
+	"Mar 19 PT",
+	"Aug 19 PT",
+	"Oct 19 PT",
+	"Jan 20 PT",
+	"Mar 20 PT",
+	"Aug 20 PT",
+	"OCT 20 PT",
+	"Jan 21 PT",
+	"Mar 21 FT",
+	"Mar 21 PT",
+	"Aug 21 PT",
+	"Oct 21 PT",
+	"Jan 22 PT",
+	"Mar 22 PT",
+];
