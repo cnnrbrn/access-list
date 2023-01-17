@@ -28,7 +28,8 @@ html.dark td {
 
 html.dark td.old-content,
 html.dark .old-content-key {
-  background: #6f9cb5 !important;
+  background: #3f525d !important;
+  color: white !important;
 }
 
 html.dark th {
