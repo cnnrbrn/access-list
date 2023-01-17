@@ -26,6 +26,11 @@ html.dark td {
   border-color: #3e3e3e;
 }
 
+html.dark td.old-content,
+html.dark .old-content-key {
+  background: #6f9cb5 !important;
+}
+
 html.dark th {
   border-color: #3e3e3e;
 }
