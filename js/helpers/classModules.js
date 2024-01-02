@@ -1,5 +1,5 @@
 import classData from "../data/classData.js";
-import { formateDate, getSundayOfWeek } from "./helpers.js";
+import { formatDate, getSundayOfWeek } from "./helpers.js";
 
 /**
  * Checks if a week has no class that week.
@@ -7,10 +7,7 @@ import { formateDate, getSundayOfWeek } from "./helpers.js";
  * @returns {boolean}
  */
 export function weekIsEmpty(moduleName) {
-	//
 	return moduleName.trim() === "";
-	//
-	//
 }
 
 /**
@@ -142,7 +139,7 @@ function findNextModuleNameAndDate(classModules, index, loopLimit, currentModule
 		}
 
 		if (isNameOfModule(moduleName)) {
-			return [moduleName, formateDate(moduleWeek, false)];
+			return [moduleName, formatDate(moduleWeek, false)];
 		}
 	}
 
@@ -198,7 +195,6 @@ export function findNextModule(classModules, thisWeekIndex) {
 	// const classModules = classData[className];
 	// const thisWeekIndex = classModules.findIndex((classModule) => Object.prototype.hasOwnProperty.call(classModule, week));
 	const moduleNameAndDate = getNextModuleNameAndDate(classModules, thisWeekIndex);
-	console.log("moduleNameAndDate", moduleNameAndDate);
 	return moduleNameAndDate ?? ["", ""];
 }
 

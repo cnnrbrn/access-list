@@ -19,10 +19,6 @@ function setThemeInDocument(theme) {
       html.classList = "dark";
       document.querySelector("#themePicker input.dark").checked = true;
       break;
-    case "red":
-      html.classList = "red";
-      document.querySelector("#themePicker input.red").checked = true;
-      break;
     default:
       document.querySelector("#themePicker input.light").checked = true;
       html.classList = "light";

@@ -5,6 +5,7 @@ export default function datepicker() {
   const clearButton = document.querySelector("#clear");
 
   datepicker.onchange = function (event) {
+    console.log(event.target.value)
     if (event.target.value) {
       clearButton.classList.remove("is-hidden");
     } else {

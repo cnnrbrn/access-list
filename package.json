@@ -26,6 +26,7 @@
 	"homepage": "https://github.com/cnnrbrn/access-list#readme",
 	"dependencies": {
 		"cypress": "^11.0.0",
+		"date-fns": "^3.0.6",
 		"jsdoc": "^3.6.11"
 	},
 	"devDependencies": {

@@ -10,6 +10,7 @@ export function getMondayOfWeek(date) {
 	}
 	const firstMondayOfWeek = date.setDate(date.getDate() - ((date.getDay() + 6) % 7));
 	const firstMondayOfWeekAsDate = new Date(firstMondayOfWeek);
+	console.log("firstMondayOfWeekAsDate", firstMondayOfWeekAsDate);
 
 	const dateOfFirstDay = `${
 		firstMondayOfWeekAsDate.getMonth() + 1
@@ -36,8 +37,12 @@ export function doesThisWeekExistInTheData(allWeeks, week) {
 	return allWeeks.includes(week);
 }
 
-export function formateDate(date, monthFirst = true) {
-	const d = new Date(date);
+export function formatDate(date, monthFirst = true) {
+	// Create a new Date object
+	let d = new Date(date);
+
+	// Adjust for timezone offset to ensure the correct date
+	d = new Date(d.getTime() + d.getTimezoneOffset() * 60000);
 
 	let datestring;
 
@@ -62,8 +67,10 @@ export function findClosestPrevDate(dates, currentWeek) {
 
 export function getWeekWithDataIfCurrentIsEmpty() {
 	const selectedDate = getSelectedDate();
+	console.log("selectedDate", selectedDate);
 
 	let weekToGetDataFor = getMondayOfWeek(selectedDate);
+	console.log("weekToGetDataFor", weekToGetDataFor);
 
 	if (!doesThisWeekExistInTheData(allWeeks, weekToGetDataFor)) {
 		const wantedWeek = weekToGetDataFor;

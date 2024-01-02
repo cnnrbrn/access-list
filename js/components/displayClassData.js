@@ -1,7 +1,6 @@
 import classData from "../data/classData.js";
-import oldContentClasses from "../data/oldContentClasses.js";
 import { getWeekWithDataIfCurrentIsEmpty } from "../helpers/helpers.js";
-import { findCurrentModule, findDeadline, findNextModule } from "../helpers/classModules.js";
+import { findCurrentModule, findNextModule } from "../helpers/classModules.js";
 import { getSelectedClass } from "../helpers/elements.js";
 
 export default function displayClassData() {
@@ -22,8 +21,6 @@ export default function displayClassData() {
 			continue;
 		}
 
-		console.log("className", className);
-
 		const [classModules, thisWeekIndex] = getClassModulesAndWeekIndex(className, weekWithData);
 
 		const newRow = tableBody.insertRow();
@@ -32,9 +29,6 @@ export default function displayClassData() {
 
 		let newText = document.createTextNode(className);
 		newCell.classList.add("has-text-weight-bold");
-		if (oldContentClasses.includes(className)) {
-			newCell.classList.add("old-content");
-		}
 		newCell.appendChild(newText);
 
 		const currentModule = findCurrentModule(classModules, thisWeekIndex, className);
