@@ -13,12 +13,14 @@ export default [
   "Aug 22 PT",
   "OCT22 F",
   "Oct 22 PT",
-  "Jan 23 FT",
+  "JAN 23 FT",
   "Jan 23 PT",
   "Mar 23 FT",
   "Mar 23 PT",
   "Aug 23 FT",
   "Aug 23 PT",
   "OCT23 F",
-  "OCT23 P"
+  "OCT23 P",
+  "JAN24 F",
+  "JAN24 P",
 ];
