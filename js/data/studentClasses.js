@@ -1,9 +1,7 @@
 export default [
-  "MAR20 P",
   "AUG20 P",
   "OCT20 P",
   "JAN21 P",
-  "MAR22 F",
   "MAR21 P",
   "AUG21 P",
   "Oct 21 PT",
@@ -23,4 +21,6 @@ export default [
   "OCT23 P",
   "JAN24 F",
   "JAN24 P",
+  "MAR24 F",
+  "MAR24 P",
 ];
